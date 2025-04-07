@@ -31,7 +31,9 @@ const BookList = ({ books, setBooks }) => {
               <div className="card-body">
                 <h5 className="card-title text-info">{book.title}</h5>
                 <p className="mb-1"><strong>Author:</strong> {book.author}</p>
-                <p className="mb-2 text-success"><strong>Price:</strong> ${book.price.toFixed(2)}</p>
+                <p className="mb-2 text-success">
+                  <strong>Price:</strong> ${(Number(book.price) || 0).toFixed(2)}
+                </p>
                 <div className="d-flex justify-content-between">
                   <Link to={`/book/${book.id}`} className="btn btn-outline-primary btn-sm">Learn More</Link>
                   <button
